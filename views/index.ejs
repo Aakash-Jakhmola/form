@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>          
+    <div class="container">
+    <fieldset class="scheduler-border">
+        <legend class="scheduler-border">Certificate Credential Verification</legend>
+    
+        <form action = "/" method="POST">
+            <lable for formnumber>Certificate Number</lable>
+            <input id="formnumber" class="form-control form-control-lg" name ="formNumber" type="text" placeholder="Enter Certificate Number">
+            <button type="submit" class="btn primary">VERIFY</button>
+        </form>
+        
+        <div id="seccontainer">
+            <% if(userPresent)  {  %>
+            
+            <fieldset class="scheduler-border">
+            <legend class="scheduler-border">Verification Result from BoredProgrammers Secure Global Database</legend>
+            <br>
+            <p>Name :<span class="details"> <%= user.name %></span></p>
+            <p>Certificate Number :<span class="details"> <%= user.certno %> </span></p>
+            <p>Certification :<span class="details"> <%= user.certificate %></span></p>
+            <p>Issued On : <span class="details"> <%= user.issueDate %></span></p>
+            <p>Issued By : <span class="details"> <%= user.issueOrg %></span></p>
+            
+            </fieldset>
+            <% } %> 
+            <p class="footer">Welcome to the Anfeidrol Certificate Credential Verification site. You can use this fraud prevention system to check credentials of any certificate issued by BoredProgrammers or Anfeidrol to the candidates nation-wide. The Certificate Verification Number can be found on all the certificates issued by BoredProgrammers or Anfeidrol.</p>    
+        </div>
+        </fieldset>
+    </div>
+
+</body>
+</html>
