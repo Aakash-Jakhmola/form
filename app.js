@@ -66,6 +66,10 @@ app.post('/compose', function(req, res){
     });
 }) ;
 
-app.listen(3000 || process.env.PORT,function() {
+let port = process.env.PORT;
+if (port == null)
+    port = 3000;
+
+app.listen(port, function() {
     console.log("server started at port 3000");
 });
